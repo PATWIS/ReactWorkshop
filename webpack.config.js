@@ -7,7 +7,7 @@ module.exports = function () {
   let dev = true;
   return {
     entry: {
-      app: './src/app',
+      app: './src/app.jsx',
       vendors: ['react', 'react-dom']
     },
     output: {
