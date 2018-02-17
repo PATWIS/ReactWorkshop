@@ -10,5 +10,14 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         }
+    },
+    "globals": {
+      ReactDom: false
+    },
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off",
+      "no-debugger": "off"
+
     }
 };

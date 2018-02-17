@@ -5,6 +5,7 @@ export const data = [
     desc: "Lorem lipsum dolorem",
     src: "https://picsum.photos/120/120",
     date: new Date(2018,3,17).toLocaleDateString(),
+    city: "Gdańsk",
     category: "squash",
     isNew: true
   },
@@ -15,6 +16,7 @@ export const data = [
     src: "https://picsum.photos/121/121",
     date: new Date(2018,1,11).toLocaleDateString(),
     category: "running",
+    city: "Warszawa",
     isPromo: true
   }
 ]
