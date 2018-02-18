@@ -12,6 +12,7 @@ module.exports = {
         }
     },
     "globals": {
+      React: false,
       ReactDom: false
     },
     "rules": {
