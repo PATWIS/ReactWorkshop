@@ -7,15 +7,14 @@ module.exports = function () {
   let dev = true;
   return {
     entry: {
-      app: './src/app.jsx',
+      app: './src/app.js',
       vendors: ['react', 'react-dom']
     },
     output: {
       path: resolve(__dirname, 'dist'),
-      publicPath: dev ? '/dist/' : '',
       filename: '[name].js'
     },
-
+    devtool: 'eval-source-map',
     module: {
       rules: [
         {
@@ -24,7 +23,8 @@ module.exports = function () {
           use: [{
             loader: 'babel-loader',
             options: {
-              presets: ['react', 'es2015']
+              presets: ['react', 'es2015'],
+              plugins: ['syntax-dynamic-import']
             }
           },
             'eslint-loader'
@@ -73,7 +73,7 @@ module.exports = function () {
       contentBase: resolve(__dirname, 'src/'),
       compress: true,
       // https: true,
-      port: 44305,
+      // port: 44305,
       // inline: false
     }
   }

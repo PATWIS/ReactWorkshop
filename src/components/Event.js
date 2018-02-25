@@ -1,6 +1,12 @@
-import {FavButton, Button} from './Button.jsx'
+import {StateButton, Button} from './Button'
 
-export const EventDetails = ({ data }) => {
+StateButton.defaultProps = {
+  active: false,
+  added: ()=>{}
+}
+
+
+export const EventDetails = ({ data, actions }) => {
   return (
     <div>
       <table className="table" style={{ width: 200 }}>
@@ -15,7 +21,8 @@ export const EventDetails = ({ data }) => {
           </tr>
         </tbody>
       </table>
-      <FavButton isFavourite={false} />
+      {/* <FavButton isFavourite={false} /> */}
+      <StateButton added={actions.addFavourites.bind(this)} />
     </div>
   )
 }
@@ -48,6 +55,5 @@ export const EventCard = (props) => {
         </div>
       </div>
     </div>
-
   )
 }

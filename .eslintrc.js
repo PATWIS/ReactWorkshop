@@ -4,6 +4,7 @@ module.exports = {
         "browser": true,
         "node": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
@@ -19,6 +20,5 @@ module.exports = {
       "no-console": "off",
       "no-unused-vars": "off",
       "no-debugger": "off"
-
     }
 };
