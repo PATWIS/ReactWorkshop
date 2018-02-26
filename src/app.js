@@ -7,7 +7,7 @@ import {Header} from './components/Header'
 // import { Router, Route, hashHistory} from 'react-router'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Loadable from 'react-loadable';
-
+import AppStore from './stores/appStore'
 const Loading = () => <div>Loading...</div>;
 
 const EventsList = ({ list, isAdmin }) => (
