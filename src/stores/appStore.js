@@ -1,27 +1,28 @@
 import createStore from './createStore'
-
+import ACTIONS from '../constants/actions'
 const AppStore = createStore({
   page: 1,
   events: [],
   events_map: [],
   list: [],
   favEventslist: []
-},function(action)  {
+}, function (action) {
   let payload = action.payload;
   let state = this.state;
   switch (action.type) {
-    case 'LOAD_EVENTS':
+    case ACTIONS.LOAD_EVENTS:
 
-    state.events = payload;
+      state.events = payload;
+      state.events_map = payload.reduce(
+        (map, event) => {
+          map[event.id] = event;
+          return map
+        }, {}),
 
-      state.events_map = payload.reduce((map, event) => {
-        map[event.id] = event;
-        return map
-      }, {}),
         this.emitChange();
       break;
 
-    case 'LOAD_MORE':
+    case ACTIONS.LOAD_MORE_EVENTS:
       this.emitChange();
       break;
 
@@ -32,7 +33,7 @@ const AppStore = createStore({
 
 import { data as events_data } from '../data';
 
-AppStore.subscribe(()=> {
+AppStore.subscribe(() => {
   console.log(AppStore.getState())
 })
 
