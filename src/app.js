@@ -202,4 +202,16 @@ class App extends React.Component {
   }
 }
 
+
+
+import reduxStore from './stores/reduxStore';
+console.log('redux store:', reduxStore)
+
+reduxStore.subscribe(()=>{
+  console.log('reduxStore state:', reduxStore.getState())
+})
+
+
+
+
 ReactDom.render(<Router><App store={AppState} actions={actions} /></Router>, document.getElementById('app'))

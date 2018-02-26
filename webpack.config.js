@@ -24,7 +24,7 @@ module.exports = function () {
             loader: 'babel-loader',
             options: {
               presets: ['react', 'es2015'],
-              plugins: ['syntax-dynamic-import']
+              plugins: ['syntax-dynamic-import', 'transform-object-rest-spread']
             }
           },
             'eslint-loader'
